@@ -1,0 +1,231 @@
+/* ============================================================
+   Portfolio Upgrade Styles — Kiran Vijay
+   ============================================================ */
+
+/* ---- Hero Section ----------------------------------------- */
+.about-me-section {
+    position: relative;
+    overflow: hidden;
+}
+.about-me-section::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(93,107,167,0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+.about-me-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Profile image in hero with animated ring */
+.profile-image-hero {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #5d6ba7;
+    box-shadow: 0 0 0 10px rgba(93,107,167,0.12);
+    animation: pulse-ring 3.5s ease-in-out infinite;
+}
+@keyframes pulse-ring {
+    0%, 100% { box-shadow: 0 0 0 10px rgba(93,107,167,0.12); }
+    50%       { box-shadow: 0 0 0 18px rgba(93,107,167,0.04); }
+}
+
+/* Typed cursor colour */
+.typed-cursor {
+    color: #5d6ba7;
+    font-weight: 300;
+}
+
+/* ---- Stats Bar -------------------------------------------- */
+.stats-section {
+    background: #5d6ba7;
+    color: #fff;
+    padding: 2.5rem 0;
+}
+.dark-mode .stats-section {
+    background: #3d4a80;
+}
+.stat-item {
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1.1;
+}
+.stat-label {
+    font-size: 0.78rem;
+    opacity: 0.88;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* ---- Skill Cards ------------------------------------------ */
+.item-inner {
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.item-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+/* Skill proficiency dots */
+.skill-level {
+    display: flex;
+    gap: 4px;
+    margin-top: 0.6rem;
+}
+.skill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(93,107,167,0.2);
+    transition: background 0.3s ease;
+}
+.skill-dot.filled {
+    background: #5d6ba7;
+}
+
+/* Skill bar (thin animated progress bar) */
+.skill-bar-wrap {
+    height: 3px;
+    background: rgba(93,107,167,0.15);
+    border-radius: 2px;
+    margin-top: 0.75rem;
+    overflow: hidden;
+}
+.skill-bar-fill {
+    height: 100%;
+    background: #5d6ba7;
+    border-radius: 2px;
+    width: 0;
+    transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Project Cards ---------------------------------------- */
+.project-card {
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.12) !important;
+}
+
+/* Badge tags for tools */
+.badge-tag {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 50px;
+    font-size: 0.73rem;
+    font-weight: 500;
+    background: rgba(93,107,167,0.1);
+    color: #5d6ba7;
+    margin: 0.15rem 0.1rem;
+    letter-spacing: 0.3px;
+}
+.dark-mode .badge-tag {
+    background: rgba(93,107,167,0.25);
+    color: #a0abdc;
+}
+
+/* ---- CTA Banner ------------------------------------------- */
+.cta-banner-section {
+    padding: 2rem 1rem;
+}
+.cta-banner {
+    background: linear-gradient(135deg, #5d6ba7 0%, #4a5894 100%);
+    color: #fff;
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+.cta-banner h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+.cta-banner p {
+    opacity: 0.88;
+    margin-bottom: 1.25rem;
+}
+.cta-banner .btn-light {
+    background: #fff;
+    color: #5d6ba7;
+    border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.75rem;
+    border-radius: 50px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.cta-banner .btn-light:hover {
+    background: #f0f2ff;
+    transform: translateY(-2px);
+}
+
+/* ---- Section headings polish ------------------------------ */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 44px;
+    height: 3px;
+    background: #5d6ba7;
+    border-radius: 2px;
+}
+
+/* ---- AOS overrides ---------------------------------------- */
+[data-aos="fade-up"] {
+    transform: translate3d(0, 24px, 0);
+}
+[data-aos="fade-right"] {
+    transform: translate3d(-24px, 0, 0);
+}
+
+/* ---- Testimonial cards ------------------------------------ */
+.item-inner {
+    border-radius: 8px;
+}
+
+/* ---- Nav: active state pill ------------------------------- */
+.navbar-nav .nav-link {
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+.navbar-nav .nav-link:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+/* ---- Footer polished ------------------------------------- */
+.footer {
+    border-top: 1px solid rgba(0,0,0,0.07);
+}
+.dark-mode .footer {
+    border-top-color: rgba(255,255,255,0.07);
+}
+
+/* ---- Responsive tweaks ----------------------------------- */
+@media (max-width: 768px) {
+    .stat-number { font-size: 1.8rem; }
+    .profile-image-hero { width: 120px; height: 120px; }
+    .cta-banner { padding: 1.75rem 1.25rem; }
+    .stats-section .row > div { border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .stats-section .row > div:last-child { border-bottom: none; }
+}
